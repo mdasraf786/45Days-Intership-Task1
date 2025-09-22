@@ -10,25 +10,43 @@ Handled Missing Values
 
 Found ~20–30 rows with missing values in Income → removed those rows.
 
-Created / Fixed Features
+Checked for Duplicates
 
-Added Age column = Current Year – Year_Birth.
+Verified dataset for duplicate rows → none found.
+
+Feature Engineering & Fixes
+
+Age = Current Year – Year_Birth.
+
+TotalSpending = sum of all product-related spending columns.
+
+TotalAcceptedCmp = sum of campaign acceptance columns.
 
 Converted Dt_Customer to proper Date format.
 
-Created TotalSpending = sum of all product-related spending columns.
-
 Categorical Variable Standardization
 
-Education: grouped into Secondary (Basic, 2n Cycle), Graduate (Graduation), and Postgraduate (Master, PhD).
+Education (renamed → UpdatedEducation):
 
-Marital_Status: simplified into Married, Single, and Other categories.
+Basic, 2n Cycle → Secondary
+
+Graduation → Graduate
+
+Master, PhD → Postgraduate
+
+Marital_Status (renamed → UpdatedMarital_Status):
+
+Married, Together → Married
+
+Single, Alone, Widow, Divorced → Single
+
+Absurd, YOLO → Other
 
 Outlier Treatment
 
-Year_Birth: removed unrealistic ages (below 18 or above 100).
+Year_Birth → removed unrealistic ages (below 18 or above 100).
 
-Income: detected extreme outliers using IQR method and removed them.
+Income → removed extreme outliers using IQR method.
 
 Final Dataset Columns
 
@@ -37,4 +55,8 @@ IncomeWithoutOutliers, Kidhome, Teenhome, Age, Dt_Customer, Recency,
 TotalSpending, NumDealsPurchases, NumWebPurchases, NumCatalogPurchases,
 NumStorePurchases, NumWebVisitsMonth, TotalAcceptedCmp, Complain, Response
 
-✅ The dataset is now consistent, free of missing values, standardized, and ready for Exploratory Data Analysis (EDA) and modeling.
+✅ The dataset is now consistent, free of missing values, duplicates, and outliers, with standardized categories and properly formatted features.
+It is ready for Exploratory Data Analysis (EDA) and modeling.
+
+
+✅ The dataset is now consistent, free of missing values, duplicates, and outliers, with standardized categories and properly formatted features. It is ready for Exploratory Data Analysis (EDA) and modeling.
